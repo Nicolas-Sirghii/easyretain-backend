@@ -2,12 +2,9 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-
-// allow requests from browser
 app.use(cors());
 
-// the object you want to access
+// The data object
 const data = {
   name: "Nicolai",
   role: "Frontend Developer",
@@ -15,12 +12,13 @@ const data = {
   active: true
 };
 
-// endpoint
+// Endpoint
 app.get("/api/data", (req, res) => {
   res.json(data);
 });
 
-// start server
+// Listen on Render’s port or local 3000
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
