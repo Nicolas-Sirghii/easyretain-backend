@@ -5,9 +5,7 @@ const cors = require("cors");
 const app = express();
 
 // Allow only your frontend to access (replace with your frontend URL)
-app.use(cors({
-  origin: "https://your-frontend-domain.com"
-}));
+app.use(cors());
 
 // Object to send (no database)
 const myObject = {
